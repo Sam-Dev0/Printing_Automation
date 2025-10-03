@@ -102,6 +102,8 @@ BACK-AUT_LIB/
 ├── venv/
 ├── main.py
 └── requirements.txt
+---
+
 Componentes Principales
 Archivo/Carpeta	Tipo	Propósito Principal
 main.py	Archivo Python	Punto de Entrada (GUI). Inicializa la interfaz de Tkinter, valida la entrada y orquesta el flujo de impresión/pausa en hilos separados.
@@ -111,8 +113,7 @@ src/printer_utils.py	Módulo	Contiene las funciones para interactuar con la API 
 libros_config/	Carpeta	Almacena los archivos JSON que definen los perfiles y parámetros específicos de cada trabajo de impresión.
 venv/	Carpeta	Entorno Virtual. Contiene las librerías aisladas del proyecto (ej. pywin32). Debe ignorarse en Git (.gitignore).
 requirements.txt	Archivo de texto	Lista las dependencias necesarias para el proyecto.
-
-Exportar a Hojas de cálculo
+---
 
 ### Explicación de las Herramientas Markdown
 
