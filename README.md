@@ -79,15 +79,45 @@ JSON
 }
 El campo configuracion_impresora es una etiqueta para que el operador sepa qué preset debe usar en la impresora (ya que la API de Windows tiene un control limitado sobre las bandejas/calidades sin configuración adicional).
 
-📚 Estructura del Proyecto
-El proyecto mantiene una estructura modular para facilitar el mantenimiento:
+¡Claro! Para mostrar la estructura de tu proyecto en el archivo README de Git (que usa el formato Markdown), la mejor manera es usar una tabla combinada con una representación jerárquica de texto.
 
+Aquí tienes el código Markdown que puedes copiar y pegar directamente en tu archivo README.md, basado en la estructura de tu proyecto PrintFlow:
+
+📁 Estructura del Proyecto
+Utilizamos una tabla para explicar el rol de cada componente principal y una vista de árbol para mostrar la jerarquía de directorios.
+
+Markdown
+
+### Vista de Árbol
+
+```bash
 BACK-AUT_LIB/
-├── venv/                       # Entorno virtual
-├── libros_config/              # Contiene los perfiles de impresión (.json)
-├── src/                        # Paquete con toda la lógica de la aplicación
-│   ├── __init__.py             # Hace de 'src' un paquete
-│   ├── data_manager.py         # Carga los perfiles .json
-│   └── printer_utils.py        # Interfaz con pywin32 para impresión real
-├── main.py                     # Punto de entrada de la aplicación (La GUI Tkinter)
-└── requirements.txt            # Dependencias externas
+├── libros_config/
+│   ├── mi_novela_a5.json
+│   └── guia_tecnica.json
+├── src/
+│   ├── __init__.py
+│   ├── data_manager.py
+│   └── printer_utils.py
+├── venv/
+├── main.py
+└── requirements.txt
+Componentes Principales
+Archivo/Carpeta	Tipo	Propósito Principal
+main.py	Archivo Python	Punto de Entrada (GUI). Inicializa la interfaz de Tkinter, valida la entrada y orquesta el flujo de impresión/pausa en hilos separados.
+src/	Paquete	Contenedor de toda la lógica interna del programa.
+src/data_manager.py	Módulo	Carga dinámicamente los perfiles de impresión (.json) de la carpeta libros_config/.
+src/printer_utils.py	Módulo	Contiene las funciones para interactuar con la API de Windows (pywin32) para listar impresoras y enviar trabajos.
+libros_config/	Carpeta	Almacena los archivos JSON que definen los perfiles y parámetros específicos de cada trabajo de impresión.
+venv/	Carpeta	Entorno Virtual. Contiene las librerías aisladas del proyecto (ej. pywin32). Debe ignorarse en Git (.gitignore).
+requirements.txt	Archivo de texto	Lista las dependencias necesarias para el proyecto.
+
+Exportar a Hojas de cálculo
+
+### Explicación de las Herramientas Markdown
+
+* **`###`:** Se usa para crear subtítulos dentro de una sección (`H3`).
+* **Bloque de código (` ```bash `):** El bloque de código `bash` se utiliza para mostrar la estructura de árbol. Esto lo aísla visualmente del resto del texto.
+* **Tabla (`|` y `---`):**
+    * `| Columna 1 | Columna 2 |...|` define las celdas.
+    * `| :--- | :--- |` define la alineación. **`| :--- |`** significa alineación a la izquierda (la más común).
